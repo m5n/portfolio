@@ -1,0 +1,302 @@
+/*
+Note: To make it work on IE7, these changes were made:
+- The 'height' property was replaced by 'padding-top'
+*/
+
+
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+
+
+.header1 {
+    height: 70px;
+    background-color: #464646;
+}
+.header1 img {
+    position: relative;
+    top: 15px;
+}
+.header2-border {
+    height: 33px;
+    background-color: #E9E9E7;
+    padding: 5px;
+}
+.header2 {
+    height: 33px;
+    background-image: url(../images/bg_titanium_grill2.gif);
+}
+.header3 {
+    height: 7px;
+    background-image: url(../images/dropshadow.gif);
+    z-index: 400;   /* above everything except active tabs (TODO: position this first) */
+}
+#doc2 {
+    position: relative;
+    top: -6px;   /* move into header3 */
+    height: 344px;
+    background-color: #464646;
+}
+#slideshow {
+    position: relative;
+    top: -330px;
+    width: 950px;
+    height: 344px;
+    z-index: 200;   /* above non-active tabs */
+}
+.footer-border {
+    margin-top: 92px;
+    height: 48px;
+    background-color: #E9E9E7;
+    padding: 5px;
+    border-bottom: 1px solid #8B8E85;
+}
+.footer {
+    height: 48px;
+    background-image: url(../images/bg_titanium_grill2.gif);
+}
+.widgets {
+    position: relative;
+    top: 5px;
+    left: 416px;
+}
+.widget {
+    width: 40px;
+    height: 40px;
+}
+.widgets a span {
+  color: white;
+  position: relative;
+  top: -17px;
+  left: 33px;
+}
+#copyright {
+    color: #aaaaaa;
+}
+
+
+
+#overlay {
+    visibility: hidden;
+}
+#overlay .hd {
+    font-style: italic;
+}
+#overlayDescription {
+    text-align: left;
+    margin-top: 1em;
+}
+
+
+.tab, .last-tab {
+    position: relative;
+    top: -680px;
+    z-index: 100;   /* tabs are at default z-index */
+
+    margin-top: 71px;
+    margin-right: 0px;
+    float: left;
+    width: 190px;
+}
+.last-tab {
+    margin-right: 0px;
+    width: 189px;
+}
+/*
+** TODO: avoid Safari-only hack
+** This will work only until other browsers start supporting first-of-type.
+*/
+body:first-of-type .last-tab {
+    width: 189px;
+}
+
+
+
+.tabcontent {
+    /* if more room is needed in tab content, move .tabs up */
+    height: 262px;
+    color: white;
+    background-color: #5d5d5d;
+    padding: 0px 10px 10px 10px;
+    font: 11pt "trebuchet ms", trebuchet, sans-serif;
+    opacity: 0;
+
+    /*
+    ** On IE7, the opacity:0 is not applied when the element is first rendered.
+    ** The workaround is to hide the element initially, and then set its
+    ** opacity:0 and visibility:visible through YUI.
+    */
+    visibility: hidden;
+}
+.sel_tabcontent {
+    height: 262px;
+    color: white;
+    background-color: #5d5d5d;
+    padding: 0px 10px 10px 10px;
+    font: 11pt "trebuchet ms", trebuchet, sans-serif;
+    opacity: 0;
+}
+.tabdivider {
+    padding-top: 7px;
+    background-color: red;
+}
+.sel_tabdivider {
+    padding-top: 7px;
+    background-color: red;
+}
+.tabbase {
+    height: 31px;
+    background-color: #dcdcdc;
+    xx_margin: 0px 1px 0px 1px;   /* sides are 1 pixel indented from tabdivider */
+    text-align: center;
+    padding-top: 10px;
+    font: 11pt "trebuchet ms", trebuchet, sans-serif;
+    font-weight: bold;
+    color: #464646;
+
+    cursor: pointer;
+    cursor: hand;
+}
+.sel_tabbase {
+    height: 31px;
+    background-color: #dcdcdc;
+    margin: 0px 1px 0px 1px;   /* sides are 1 pixel indented from tabdivider */
+    text-align: center;
+    padding-top: 10px;
+    font: 11pt "trebuchet ms", trebuchet, sans-serif;
+    font-weight: bold;
+    color: #464646;
+
+    cursor: default;
+}
+
+
+
+#hd table {
+    position: relative;
+    top: -500px;
+}
+.piece, .home-piece {
+    width: 103px;
+    height: 151px;
+    background-color: orange;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    z-index: 300;   /* pieces are above slideshow */
+
+    cursor: pointer;
+    cursor: hand;
+}
+.piece p {
+    color: white;
+    padding: 98px 8px 8px 8px;
+}
+#p1, #p2 {
+    margin-left: 14px;
+}
+.home-piece {
+    background-color: transparent;
+}
+.home-piece img {
+    position: relative;
+    top: 89px;
+    left: 42px;
+}
+
+
+
+.top-roundedcorner {
+    height: 7px;
+    width: 190px;
+    opacity: 0;
+
+    /*
+    ** On IE7, the opacity:0 is not applied when the element is first rendered.
+    ** The workaround is to hide the element initially, and then set its
+    ** opacity:0 and visibility:visible through YUI.
+    */
+    visibility: hidden;
+}
+.bottom-roundedcorner {
+    height: 11px;
+    width: 188px;
+    margin: 0px 1px 0px 1px;   /* sides are 1 pixel indented from tabdivider */
+}
+.top-roundedcorner .top-left,
+.top-roundedcorner .top-spacer,
+.top-roundedcorner .top-right {
+    height: 7px;
+    width: 7px;
+    float: left;
+}
+.bottom-roundedcorner .bottom-left,
+.bottom-roundedcorner .bottom-spacer,
+.bottom-roundedcorner .bottom-right {
+    height: 11px;
+    width: 11px;
+    float: left;
+}
+.top-roundedcorner .top-left {
+    background-image: url(../images/corner_topleft.gif);
+}
+.top-roundedcorner .top-spacer {
+    background-color: #5d5d5d;
+    width: 176px;
+}
+.top-roundedcorner .top-right {
+    background-image: url(../images/corner_topright.gif);
+}
+.bottom-roundedcorner .bottom-left {
+    background-image: url(../images/corner_bottomleft.gif);
+}
+.bottom-roundedcorner .bottom-spacer {
+    background-color: #dcdcdc;
+    width: 166px;
+    border-bottom: 1px solid #A9A9A7;
+}
+/*
+** TODO: avoid Safari-only hack
+** This will work only until other browsers start supporting first-of-type.
+*/
+body:first-of-type #tabbottomcorner5 .bottom-spacer {
+    width: 165px;
+}
+.bottom-roundedcorner .bottom-right {
+    background-image: url(../images/corner_bottomright.gif);
+}
+
+
+
+#tab1 .tabdivider {
+    background-color: #AAAAAA;
+}
+#tab1 .sel_tabdivider {
+    background-color: red;
+}
+#tab2 .tabdivider {
+    background-color: #888888;
+}
+#tab2 .sel_tabdivider {
+    background-color: green;
+}
+#tab3 .tabdivider {
+    background-color: #666666;
+}
+#tab3 .sel_tabdivider {
+    background-color: blue;
+}
+#tab4 .tabdivider {
+    background-color: #444444;
+}
+#tab4 .sel_tabdivider {
+    background-color: yellow;
+}
+#tab5 .tabdivider {
+    background-color: #222222;
+}
+#tab5 .sel_tabdivider {
+    background-color: #660066;   /* Yahoo! purple */
+}
