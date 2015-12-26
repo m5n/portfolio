@@ -588,17 +588,6 @@ YAHOO.m5n.portfolio = (function() {
     }
 
     function showOverlay(e, piece) {
-        // TODO: remove special handling; integrate with new portfolio.
-        if (4 == currentView) {
-            var playgroundUrls = {
-                0: "http://tenhanna.com/m5n/design_playground/ued_gallery/02_dnd/dnd.html",
-                1: "http://tenhanna.com/m5n/design_playground/ued_gallery/01_slider/slider.html",
-                2: "http://m5n.wordpress.com/"
-            };
-            window.location = playgroundUrls[piece];
-            return;
-        }
-
         showOverlayForPiece(galleryPieces[currentView][piece]);
     }
 
